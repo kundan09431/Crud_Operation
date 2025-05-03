@@ -1,0 +1,17 @@
+# .gitignore
+
+# Node
+node_modules/
+.env
+
+# Logs
+logs
+*.log
+
+# Build
+build/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
