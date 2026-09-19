@@ -10,6 +10,4 @@ route.put("/update/:id", update);
 route.delete("/delete/:id", deleteUser);
 
 
-
-
 export default route;

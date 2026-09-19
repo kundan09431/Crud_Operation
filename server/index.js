@@ -21,6 +21,4 @@ mongoose.connect(URL).then(()=>{
     })
 }).catch(error => console.error(error));
 
-
-
 app.use("/api",route);

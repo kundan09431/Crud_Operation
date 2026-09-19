@@ -28,8 +28,6 @@ export const getAll = async(req,res)=>{
 
         res.status(200).json(userData);
 
-
-
     } catch (error) {
         res.status(500).json({error:error})
     }
@@ -48,8 +46,6 @@ export const getOne = async(req, res)=>{
         }
 
         res.status(200).json(userExist);
-
-
 
     } catch (error) {
         res.status(500).json({error:error})
