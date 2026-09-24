@@ -11,7 +11,7 @@ const User = () => {
 
   useEffect (()=>{
     const fetchData = async()=>{
-      const response = await axios.get("https://crud-operation-hanv.onrender.com/api/getall")
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/getall`)
       setUsers(response.data)
     }
     fetchData()
@@ -19,7 +19,7 @@ const User = () => {
 
 
   const deleteUser = async(userId) =>{
-    await axios.delete(`https://crud-operation-hanv.onrender.com/api/delete/${userId}`)
+    await axios.delete(`${import.meta.env.VITE_API_URL}/api/delete/${userId}`)
     .then((response)=>{
       setUsers((prevUser)=>prevUser.filter((user)=>user._id !== userId))
       toast.success(response.data.msg,{position:'top-right'})

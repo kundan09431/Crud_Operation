@@ -23,7 +23,7 @@ const Edit = () => {
     }
 
     useEffect(()=>{
-      axios.get(`https://crud-operation-hanv.onrender.com/api/getone/${id}`)
+      axios.get(`${import.meta.env.VITE_API_URL}/api/getone/${id}`)
       .then((response)=>{
         setUser(response.data)
       }).catch((error)=>{
@@ -33,7 +33,7 @@ const Edit = () => {
 
     const submitForm = async(e)=>{
       e.preventDefault();
-    await axios.put(`https://crud-operation-hanv.onrender.com/api/update/${id}`, user)
+    await axios.put(`${import.meta.env.VITE_API_URL}/api/update/${id}`, user)
     .then((response)=>{
       toast.success(response.data.msg, {position:"top-right"})
       navigate("/")

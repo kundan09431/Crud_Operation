@@ -4,6 +4,7 @@ import './add.css'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
+
 const Add = () => {
   const users = {
     fname : "",
@@ -21,7 +22,7 @@ const Add = () => {
 
   const submitForm = async(e) =>{
     e.preventDefault();
-    await axios.post("https://crud-operation-hanv.onrender.com/api/create", user)
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/create`, user)
     .then((response)=>{
       toast.success(response.data.msg, {position:"top-right"})
       navigate("/")
